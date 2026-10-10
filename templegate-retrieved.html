@@ -1,0 +1,3600 @@
+<!DOCTYPE html>
+<!--
+TEMPLEGATE WEBSITE SOURCE
+Premium responsive spiritual community experience.
+Design system: midnight blue, gold, ivory, cosmic imagery, editorial serif typography.
+Core sections: home, introduction, pillars, products, sanctuary, teachings, podcast, membership, journal, contact.
+No registration system or backend is connected in this static prototype.
+Before production: configure a secure contact endpoint, provide licensed media, and verify all external URLs.
+-->
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#10131f" name="theme-color"/>
+  <meta
+    content="TempleGate — a sanctuary for the human spirit. Discover wisdom, meditation, spiritual essentials and a quieter path to inner peace."
+    name="description"/>
+  <title>
+   TempleGate — A Sanctuary for the Human Spirit
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet"/>
+  <style>
+   :root
+{
+    --night:#10131f;
+    --night2:#171b2a;
+    --ivory:#f5f0e7;
+    --paper:#fffdf8;
+    --gold:#d6b77a;
+    --gold2:#f0d9a3;
+    --muted:#a9adbd;
+    --ink:#202334;
+    --sage:#b7c2ad;
+    --line:rgba(214,183,122,.24);
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"DM Sans",Arial,sans-serif;
+    --radius:22px;
+    --shadow:0 18px 55px rgba(9,11,20,.16)
+}
+*
+{
+    box-sizing:border-box
+}
+html
+{
+    scroll-behavior:smooth;
+    scroll-padding-top:88px
+}
+body
+{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65
+}
+body.menu-open
+{
+    overflow:hidden
+}
+a
+{
+    color:inherit;
+    text-decoration:none
+}
+button,input,textarea,select
+{
+    font:inherit
+}
+button
+{
+    cursor:pointer
+}
+.wrap
+{
+    width:min(1180px,calc(100% - 44px));
+    margin:auto
+}
+.eyebrow
+{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--gold)
+}
+.eyebrow:before
+{
+    content:"";
+    width:28px;
+    height:1px;
+    background:currentColor
+}
+.section
+{
+    padding:105px 0
+}
+.section-heading
+{
+    max-width:720px;
+    margin-bottom:42px
+}
+.section-heading h2
+{
+    font:500 clamp(2.7rem,5vw,4.3rem)/.98 var(--serif);
+    letter-spacing:-.035em;
+    margin:15px 0 18px
+}
+.section-heading p
+{
+    color:#6f7180;
+    max-width:610px;
+    margin:0;
+    font-size:1.02rem
+}
+.btn
+{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 22px;
+    border:1px solid transparent;
+    border-radius:999px;
+    font-size:.88rem;
+    font-weight:700;
+    transition:transform .25s,background .25s,border .25s
+}
+.btn:hover
+{
+    transform:translateY(-2px)
+}
+.btn-gold
+{
+    background:var(--gold);
+    color:#171724
+}
+.btn-gold:hover
+{
+    background:var(--gold2)
+}
+.btn-outline
+{
+    border-color:rgba(214,183,122,.65);
+    color:var(--ivory);
+    background:transparent
+}
+.btn-outline:hover
+{
+    background:rgba(214,183,122,.12)
+}
+.btn-dark
+{
+    background:var(--night);
+    color:var(--ivory)
+}
+.icon
+{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    flex:none
+}
+/* Header wordmark: text-only identity, consistently visible on every page */
+.header-wordmark,.menu-wordmark
+{
+    color:var(--ivory);
+    text-decoration:none;
+    font-family:var(--serif);
+    font-weight:600;
+    letter-spacing:.09em;
+    line-height:1;
+    white-space:nowrap
+}
+.header-wordmark
+{
+    display:inline-flex;
+    align-items:center;
+    min-height:48px;
+    font-size:clamp(1.15rem,3.8vw,1.65rem);
+    position:relative;
+    z-index:36
+}
+.menu-wordmark
+{
+    display:inline-block;
+    font-size:clamp(1.45rem,4vw,1.9rem)
+}
+.header-wordmark:focus-visible,.menu-wordmark:focus-visible
+{
+    outline:2px solid var(--gold);
+    outline-offset:5px;
+    border-radius:2px
+}
+/* Navigation */
+header
+{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:35;
+    color:var(--ivory);
+    border-bottom:1px solid rgba(214,183,122,.22);
+    background:rgba(12,15,27,.88);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px)
+}
+.nav
+{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px
+}
+.nav-right
+{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:20px;
+    width:auto;
+    flex:0 0 auto
+}
+.hamburger
+{
+    position:relative;
+    z-index:46;
+    flex:0 0 48px;
+    box-shadow:0 4px 20px rgba(0,0,0,.18)
+}
+.brand
+{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font:600 1.6rem var(--serif);
+    letter-spacing:.04em
+}
+.brand-mark
+{
+    width:34px;
+    height:34px;
+    border:1px solid var(--gold);
+    border-radius:50% 50% 5px 5px;
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+    font:500 1.25rem var(--serif);
+    transform:rotate(0deg)
+}
+.brand-logo
+{
+    display:block;
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    flex:none
+}
+.menu-panel .brand-logo
+{
+    width:54px;
+    height:54px
+}
+.footer-logo
+{
+    width:46px;
+    height:46px;
+    object-fit:contain;
+    vertical-align:middle;
+    margin-right:8px
+}
+.brand small
+{
+    display:block;
+    font:500 .56rem var(--sans);
+    letter-spacing:.19em;
+    color:#c9c7c7;
+    text-transform:uppercase;
+    margin-top:-3px
+}
+.nav-right
+{
+    display:flex;
+    align-items:center;
+    gap:20px
+}
+.nav-note
+{
+    font-size:.75rem;
+    letter-spacing:.09em;
+    color:#c5c5d0;
+    text-transform:uppercase
+}
+.hamburger
+{
+    width:48px;
+    height:48px;
+    border:1px solid rgba(214,183,122,.5);
+    background:rgba(255,255,255,.04);
+    border-radius:50%;
+    display:grid;
+    align-content:center;
+    justify-items:center;
+    gap:5px;
+    transition:background .25s
+}
+.hamburger:hover
+{
+    background:rgba(214,183,122,.15)
+}
+.hamburger span
+{
+    height:1px;
+    width:19px;
+    background:var(--gold);
+    transition:transform .25s
+}
+.hamburger span:nth-child(2)
+{
+    width:13px;
+    margin-left:6px
+}
+.menu-panel
+{
+    position:fixed;
+    inset:0 0 0 auto;
+    width:min(480px,100%);
+    padding:30px clamp(28px,6vw,65px);
+    background:#111522;
+    z-index:40;
+    transform:translateX(105%);
+    transition:transform .4s cubic-bezier(.22,.8,.2,1);
+    box-shadow:-20px 0 80px #0007;
+    display:flex;
+    flex-direction:column
+}
+.menu-panel.open
+{
+    transform:translateX(0)
+}
+.menu-top
+{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom:42px;
+    border-bottom:1px solid var(--line)
+}
+.menu-close
+{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:none;
+    color:var(--ivory);
+    font-size:1.6rem
+}
+.menu-links
+{
+    display:flex;
+    flex-direction:column;
+    padding:32px 0
+}
+.menu-links a
+{
+    display:block!important;
+    color:#f5f0e7!important;
+    opacity:1!important;
+    visibility:visible!important;
+    font:500 clamp(2rem,4vw,2.7rem) var(--serif);
+    padding:11px 0;
+    border-bottom:1px solid rgba(255,255,255,.14);
+    transition:color .2s,padding .2s
+}
+.menu-links a span
+{
+    color:#d6b77a!important
+}
+.menu-panel .brand,.menu-panel .brand small
+{
+    color:#f5f0e7!important;
+    opacity:1!important
+}
+.menu-panel .menu-bottom p
+{
+    color:#d4d6df!important
+}
+.menu-panel
+{
+    overflow-y:auto;
+    color:#f5f0e7!important
+}
+.menu-links
+{
+    flex:1
+}
+.menu-links a:hover
+{
+    color:var(--gold);
+    padding-left:9px
+}
+.menu-bottom
+{
+    margin-top:auto;
+    color:var(--muted);
+    font-size:.84rem
+}
+.menu-bottom strong
+{
+    color:var(--gold);
+    font-weight:500
+}
+.scrim
+{
+    position:fixed;
+    inset:0;
+    background:#060813aa;
+    z-index:30;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s
+}
+.scrim.show
+{
+    opacity:1;
+    visibility:visible
+}
+/* Hero */
+.hero
+{
+    min-height:760px;
+    height:min(900px,100svh);
+    max-height:1000px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    color:var(--ivory);
+    overflow:hidden;
+    background:#0d1020 url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2200&q=90') center 43%/cover no-repeat
+}
+.hero:before
+{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(9,11,22,.96) 0%,rgba(10,13,27,.79) 43%,rgba(10,13,27,.23) 100%),linear-gradient(0deg,rgba(10,12,23,.76),transparent 40%)
+}
+.hero:after
+{
+    content:"";
+    position:absolute;
+    inset:auto 0 0;
+    height:120px;
+    background:linear-gradient(transparent,var(--ivory))
+}
+.hero-content
+{
+    position:relative;
+    z-index:1;
+    padding-top:85px;
+    max-width:800px
+}
+.hero .eyebrow
+{
+    margin-bottom:24px
+}
+.hero h1
+{
+    font:500 clamp(3.7rem,8.5vw,7.6rem)/.84 var(--serif);
+    letter-spacing:-.045em;
+    margin:0 0 28px;
+    max-width:850px
+}
+.hero h1 span
+{
+    color:var(--gold2);
+    font-style:italic
+}
+.hero-lead
+{
+    font-size:clamp(1.02rem,1.6vw,1.2rem);
+    line-height:1.8;
+    max-width:720px;
+    color:#e3e2e8;
+    margin:0 0 18px
+}
+.hero-copy
+{
+    max-width:680px;
+    color:#c2c4d1;
+    font-size:.95rem;
+    line-height:1.85
+}
+.hero-actions
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:30px
+}
+.hero-signature
+{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-top:45px;
+    color:#c4c5d0;
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase
+}
+.hero-signature:before
+{
+    content:"";
+    width:42px;
+    height:1px;
+    background:var(--gold)
+}
+.hero-orbit
+{
+    position:absolute;
+    right:10%;
+    top:26%;
+    width:clamp(170px,24vw,340px);
+    aspect-ratio:1;
+    border:1px solid rgba(240,217,163,.18);
+    border-radius:50%;
+    z-index:0;
+    box-shadow:0 0 90px rgba(120,132,210,.1),inset 0 0 65px rgba(214,183,122,.06)
+}
+.hero-orbit:before,.hero-orbit:after
+{
+    content:"";
+    position:absolute;
+    border:1px solid rgba(240,217,163,.12);
+    border-radius:50%;
+    inset:12% -12%;
+    transform:rotate(-28deg)
+}
+.hero-orbit:after
+{
+    inset:-12% 12%;
+    transform:rotate(36deg)
+}
+.hero-orbit span
+{
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--gold2);
+    top:19%;
+    left:17%;
+    box-shadow:0 0 20px var(--gold2)
+}
+/* Intro */
+.intro
+{
+    padding:50px 0 100px;
+    background:var(--ivory)
+}
+.intro-grid
+{
+    display:grid;
+    grid-template-columns:.7fr 1.3fr;
+    gap:65px;
+    align-items:start
+}
+.intro-mark
+{
+    font:500 6rem/.8 var(--serif);
+    color:#c8ae79;
+    opacity:.8
+}
+.intro h2
+{
+    font:500 clamp(2.3rem,4.5vw,4rem)/1.03 var(--serif);
+    margin:0 0 22px;
+    letter-spacing:-.025em
+}
+.intro p
+{
+    color:#666978;
+    max-width:760px
+}
+.quote
+{
+    margin-top:28px;
+    padding:22px 25px;
+    border-left:2px solid var(--gold);
+    background:#fffaf0;
+    font:italic 1.3rem/1.5 var(--serif);
+    color:#444454
+}
+/* Pillars */
+.pillars
+{
+    background:#eae4d9
+}
+.pillar-grid
+{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px
+}
+.pillar
+{
+    padding:30px;
+    background:rgba(255,253,248,.7);
+    border:1px solid #ded4c3;
+    border-radius:18px;
+    min-height:220px;
+    transition:transform .25s,box-shadow .25s
+}
+.pillar:hover
+{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow)
+}
+.pillar-number
+{
+    font:500 1rem var(--serif);
+    color:#ad8c4e
+}
+.pillar h3
+{
+    font:600 1.75rem var(--serif);
+    margin:20px 0 8px
+}
+.pillar p
+{
+    color:#717382;
+    font-size:.92rem;
+    margin:0
+}
+/* Products */
+.products
+{
+    background:var(--paper)
+}
+.membership
+{
+    background:#111522;
+    color:#f5f0e7
+}
+.membership-grid
+{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center
+}
+.membership h2
+{
+    font:500 clamp(2.7rem,5vw,4.3rem)/.98 var(--serif);
+    letter-spacing:-.035em;
+    margin:15px 0 22px
+}
+.membership h2 em
+{
+    color:#f0d9a3;
+    font-weight:400
+}
+.membership-grid>div>p
+{
+    max-width:650px;
+    color:#d0d2dc;
+    margin:0 0 28px
+}
+.membership-note
+{
+    padding:36px;
+    border:1px solid rgba(214,183,122,.32);
+    border-radius:22px;
+    background:rgba(255,255,255,.035)
+}
+.membership-star
+{
+    font-size:2.2rem;
+    color:#d6b77a
+}
+.membership-note blockquote
+{
+    font:italic 2rem/1.2 var(--serif);
+    color:#f0d9a3;
+    margin:20px 0
+}
+.membership-note p
+{
+    color:#d0d2dc;
+    margin-bottom:0
+}
+.product-toolbar
+{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:28px
+}
+.filters
+{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap
+}
+.filter-btn
+{
+    padding:9px 15px;
+    border:1px solid #ded9d0;
+    border-radius:999px;
+    background:transparent;
+    color:#6b6c78;
+    font-size:.82rem
+}
+.filter-btn.active,.filter-btn:hover
+{
+    background:var(--night);
+    border-color:var(--night);
+    color:var(--ivory)
+}
+.product-count
+{
+    font-size:.8rem;
+    color:#777987
+}
+.product-grid
+{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px
+}
+.product-card
+{
+    border:1px solid #e8e2d8;
+    border-radius:18px;
+    overflow:hidden;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    transition:transform .3s,box-shadow .3s
+}
+.product-card:hover
+{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow)
+}
+.product-image
+{
+    height:230px;
+    position:relative;
+    overflow:hidden;
+    background:#ded9cf
+}
+.product-image img
+{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s
+}
+.product-card:hover .product-image img
+{
+    transform:scale(1.06)
+}
+.badge
+{
+    position:absolute;
+    left:13px;
+    top:13px;
+    padding:6px 10px;
+    background:#10131fdb;
+    color:#f7eddb;
+    border:1px solid #d6b77a55;
+    border-radius:999px;
+    font-size:.65rem;
+    letter-spacing:.08em;
+    text-transform:uppercase
+}
+.product-info
+{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    flex:1
+}
+.product-type
+{
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#9b7b42;
+    font-weight:700
+}
+.product-info h3
+{
+    font:600 1.5rem/1.05 var(--serif);
+    margin:9px 0
+}
+.product-info p
+{
+    font-size:.82rem;
+    color:#777987;
+    margin:0 0 20px;
+    flex:1
+}
+.product-bottom
+{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px
+}
+.price
+{
+    font-weight:700;
+    font-size:.9rem
+}
+.add-btn
+{
+    border:1px solid #d9c8a6;
+    background:#f9f1df;
+    color:#4c402a;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    font-size:1.3rem;
+    transition:.2s
+}
+.add-btn:hover
+{
+    background:var(--gold);
+    transform:rotate(90deg)
+}
+.cart-status
+{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:25;
+    padding:14px 18px;
+    border-radius:14px;
+    background:var(--night);
+    color:var(--ivory);
+    box-shadow:var(--shadow);
+    font-size:.86rem;
+    opacity:0;
+    transform:translateY(15px);
+    pointer-events:none;
+    transition:.3s
+}
+.cart-status.show
+{
+    opacity:1;
+    transform:translateY(0)
+}
+.cart-status strong
+{
+    color:var(--gold2)
+}
+/* Sanctuary feature */
+.sanctuary
+{
+    background:var(--night);
+    color:var(--ivory);
+    overflow:hidden
+}
+.sanctuary-grid
+{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
+    align-items:center
+}
+.sanctuary .section-heading p
+{
+    color:#b4b6c4
+}
+.sanctuary-image
+{
+    min-height:520px;
+    position:relative;
+    border-radius:200px 200px 18px 18px;
+    overflow:hidden;
+    background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85') center/cover
+}
+.sanctuary-image:after
+{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(0deg,#11152266,transparent 70%)
+}
+.image-caption
+{
+    position:absolute;
+    z-index:1;
+    bottom:26px;
+    left:26px;
+    right:26px;
+    font:italic 1.7rem/1.1 var(--serif);
+    color:#fff
+}
+.sanctuary-list
+{
+    list-style:none;
+    padding:0;
+    margin:30px 0
+}
+.sanctuary-list li
+{
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    display:flex;
+    gap:14px;
+    color:#d0d1da
+}
+.sanctuary-list li:before
+{
+    content:"✧";
+    color:var(--gold);
+    font-size:1.1rem
+}
+/* Gallery */
+.gallery
+{
+    background:#f0e9dd
+}
+.gallery-grid
+{
+    display:grid;
+    grid-template-columns:1.15fr .85fr .85fr;
+    grid-template-rows:250px 250px;
+    gap:15px
+}
+.gallery-item
+{
+    position:relative;
+    overflow:hidden;
+    border-radius:17px;
+    background:#c9c0b3
+}
+.gallery-item:first-child
+{
+    grid-row:span 2
+}
+.gallery-item:nth-child(4)
+{
+    grid-column:span 2
+}
+.gallery-item img
+{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .7s
+}
+.gallery-item:hover img
+{
+    transform:scale(1.06)
+}
+.gallery-item:after
+{
+    content:"";
+    position:absolute;
+    inset:40% 0 0;
+    background:linear-gradient(transparent,rgba(10,12,22,.75))
+}
+.gallery-item span
+{
+    position:absolute;
+    bottom:18px;
+    left:20px;
+    z-index:1;
+    color:#fff;
+    font:500 1.5rem var(--serif)
+}
+/* Blog */
+.journal
+{
+    background:var(--ivory)
+}
+.journal-grid
+{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px
+}
+.article
+{
+    background:var(--paper);
+    border:1px solid #e4ddd1;
+    border-radius:18px;
+    overflow:hidden
+}
+.article img
+{
+    height:210px;
+    width:100%;
+    object-fit:cover;
+    display:block
+}
+.article-body
+{
+    padding:23px
+}
+.article-body .date
+{
+    font-size:.7rem;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:#9a7a43
+}
+.article-body h3
+{
+    font:600 1.8rem/1.02 var(--serif);
+    margin:12px 0
+}
+.article-body p
+{
+    font-size:.88rem;
+    color:#717382
+}
+.read-link
+{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:10px;
+    font-size:.82rem;
+    font-weight:700;
+    color:#856a37
+}
+.read-link:hover
+{
+    gap:13px
+}
+/* Contact */
+.contact
+{
+    background:linear-gradient(135deg,#191d2e,#10131f);
+    color:var(--ivory);
+    position:relative;
+    overflow:hidden
+}
+.contact:after
+{
+    content:"✧";
+    position:absolute;
+    right:7%;
+    top:-60px;
+    font:400 22rem var(--serif);
+    color:#d6b77a0b;
+    pointer-events:none
+}
+.contact-grid
+{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:65px;
+    position:relative;
+    z-index:1
+}
+.contact .section-heading p
+{
+    color:#b9bbc8
+}
+.contact-form
+{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px
+}
+.field
+{
+    display:flex;
+    flex-direction:column;
+    gap:7px
+}
+.field.full
+{
+    grid-column:1/-1
+}
+.field label
+{
+    font-size:.76rem;
+    color:#d2c9b8
+}
+.field input,.field textarea,.field select
+{
+    width:100%;
+    border:1px solid #3b4053;
+    background:#191d2b;
+    color:#f8f2e7;
+    padding:13px 14px;
+    border-radius:10px;
+    outline:none
+}
+.field input:focus,.field textarea:focus,.field select:focus
+{
+    border-color:var(--gold)
+}
+.field textarea
+{
+    min-height:125px;
+    resize:vertical
+}
+.field select option
+{
+    background:#191d2b
+}
+.form-note
+{
+    grid-column:1/-1;
+    font-size:.75rem;
+    color:#aeb1c0;
+    margin:0
+}
+.form-success
+{
+    grid-column:1/-1;
+    color:var(--gold2);
+    font-size:.9rem;
+    display:none
+}
+.form-success.show
+{
+    display:block
+}
+/* Footer */
+footer
+{
+    background:#0b0e18;
+    color:#aeb0be;
+    padding:30px 0
+}
+.footer-row
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap
+}
+.footer-brand
+{
+    color:var(--ivory);
+    font:600 1.35rem var(--serif)
+}
+.footer-copy
+{
+    font-size:.76rem
+}
+.footer-links
+{
+    display:flex;
+    gap:18px;
+    font-size:.78rem
+}
+.footer-links a:hover
+{
+    color:var(--gold)
+}
+.to-top
+{
+    position:fixed;
+    right:23px;
+    bottom:86px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid #d6b77a66;
+    background:#111522;
+    color:var(--gold);
+    z-index:15;
+    display:none
+}
+.to-top.show
+{
+    display:block
+}
+.reveal
+{
+    opacity:1;
+    transform:none;
+    transition:opacity .7s,transform .7s
+}
+.reveal.visible
+{
+    opacity:1;
+    transform:translateY(0)
+}
+@media(max-width:980px)
+{
+    .product-grid
+    {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .intro-grid
+    {
+        gap:30px
+    }
+    .sanctuary-grid
+    {
+        gap:35px
+    }
+    .gallery-grid
+    {
+        grid-template-rows:210px 210px
+    }
+    .product-image
+    {
+        height:220px
+    }
+}
+@media(max-width:700px)
+{
+    .wrap
+    {
+        width:min(100% - 32px,560px)
+    }
+    .section
+    {
+        padding:76px 0
+    }
+    .nav
+    {
+        height:76px
+    }
+    .brand
+    {
+        font-size:1.4rem
+    }
+    .nav-note
+    {
+        display:none
+    }
+    .hero
+    {
+        height:auto;
+        min-height:780px;
+        max-height:none;
+        background-position:58% center
+    }
+    .hero:before
+    {
+        background:linear-gradient(90deg,rgba(9,11,22,.92),rgba(10,13,27,.55)),linear-gradient(0deg,rgba(10,12,23,.68),transparent 55%)
+    }
+    .hero-content
+    {
+        padding-top:125px;
+        padding-bottom:135px
+    }
+    .hero h1
+    {
+        font-size:clamp(3.65rem,15vw,5.8rem)
+    }
+    .hero-orbit
+    {
+        right:-50px;
+        top:24%;
+        opacity:.7
+    }
+    .hero-copy
+    {
+        font-size:.9rem
+    }
+    .intro
+    {
+        padding:30px 0 75px
+    }
+    .intro-grid
+    {
+        grid-template-columns:1fr;
+        gap:24px
+    }
+    .intro-mark
+    {
+        font-size:4rem
+    }
+    .pillar-grid
+    {
+        grid-template-columns:1fr
+    }
+    .pillar
+    {
+        min-height:0
+    }
+    .product-grid
+    {
+        gap:12px
+    }
+    .product-image
+    {
+        height:175px
+    }
+    .product-info
+    {
+        padding:15px
+    }
+    .product-info h3
+    {
+        font-size:1.35rem
+    }
+    .product-info p
+    {
+        font-size:.78rem
+    }
+    .product-bottom
+    {
+        align-items:center
+    }
+    .price
+    {
+        font-size:.82rem
+    }
+    .add-btn
+    {
+        width:34px;
+        height:34px
+    }
+    .sanctuary-grid
+    {
+        grid-template-columns:1fr;
+        gap:35px
+    }
+    .sanctuary-image
+    {
+        min-height:380px;
+        order:-1
+    }
+    .gallery-grid
+    {
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:220px 170px 170px
+    }
+    .gallery-item:first-child
+    {
+        grid-row:span 2
+    }
+    .gallery-item:nth-child(4)
+    {
+        grid-column:span 2
+    }
+    .gallery-item span
+    {
+        font-size:1.2rem;
+        left:14px;
+        bottom:13px
+    }
+    .journal-grid
+    {
+        grid-template-columns:1fr
+    }
+    .article
+    {
+        display:grid;
+        grid-template-columns:.8fr 1.2fr
+    }
+    .article img
+    {
+        height:100%;
+        min-height:230px
+    }
+    .article-body
+    {
+        padding:17px
+    }
+    .article-body h3
+    {
+        font-size:1.55rem
+    }
+    .membership-grid,.contact-grid
+    {
+        grid-template-columns:1fr;
+        gap:30px
+    }
+    .contact-form
+    {
+        grid-template-columns:1fr
+    }
+    .field.full,.form-note,.form-success
+    {
+        grid-column:auto
+    }
+    .footer-row
+    {
+        align-items:flex-start;
+        flex-direction:column
+    }
+    .footer-links
+    {
+        flex-wrap:wrap
+    }
+    .cart-status
+    {
+        right:12px;
+        bottom:12px;
+        left:12px;
+        text-align:center
+    }
+}
+@media(max-width:390px)
+{
+    .product-grid
+    {
+        grid-template-columns:1fr
+    }
+    .product-image
+    {
+        height:220px
+    }
+    .article
+    {
+        display:block
+    }
+    .article img
+    {
+        height:200px
+    }
+    .hero-actions .btn
+    {
+        width:100%
+    }
+}
+@media(prefers-reduced-motion:reduce)
+{
+    *,*:before,*:after
+    {
+        scroll-behavior:auto!important;
+        transition:none!important;
+        animation:none!important
+    }
+    .reveal
+    {
+        opacity:1;
+        transform:none
+    }
+}
+/* TempleGate ambient meditation player */
+.ambient-player
+{
+    position:fixed;
+    left:18px;
+    bottom:22px;
+    z-index:25;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    max-width:calc(100vw - 36px);
+    padding:10px 14px;
+    border:1px solid rgba(214,183,122,.45);
+    border-radius:999px;
+    background:rgba(15,18,31,.94);
+    color:#f5f0e7;
+    box-shadow:0 12px 36px #0005;
+    backdrop-filter:blur(12px)
+}
+.ambient-toggle
+{
+    width:40px;
+    height:40px;
+    flex:0 0 40px;
+    border:0;
+    border-radius:50%;
+    background:#d6b77a;
+    color:#171724;
+    font-size:1rem;
+    display:grid;
+    place-items:center
+}
+.ambient-copy
+{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    line-height:1.25
+}
+.ambient-title
+{
+    font-size:.8rem;
+    font-weight:700;
+    white-space:nowrap
+}
+.ambient-state
+{
+    font-size:.68rem;
+    color:#c9cbd5;
+    margin-top:3px
+}
+.ambient-volume
+{
+    width:64px;
+    accent-color:#d6b77a
+}
+.ambient-player.playing .ambient-toggle
+{
+    background:#f0d9a3
+}
+@media(max-width:480px)
+{
+    .ambient-player
+    {
+        left:10px;
+        bottom:12px;
+        gap:8px;
+        padding:8px 10px
+    }
+    .ambient-volume
+    {
+        width:48px
+    }
+    .ambient-title
+    {
+        font-size:.73rem
+    }
+    .ambient-state
+    {
+        font-size:.62rem
+    }
+}
+/* TempleGate video teachings gallery */
+.video-gallery
+{
+    background:#111522;
+    color:#f5f0e7
+}
+.video-gallery .section-heading p
+{
+    color:#c4c6d1
+}
+.video-gallery .eyebrow
+{
+    color:#d6b77a
+}
+.video-grid
+{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px
+}
+.video-card
+{
+    overflow:hidden;
+    border:1px solid rgba(214,183,122,.25);
+    border-radius:18px;
+    background:#191e2e
+}
+.video-frame
+{
+    position:relative;
+    aspect-ratio:16/9;
+    background:radial-gradient(circle at 50% 30%,#34344a,#0b0e18 72%);
+    display:grid;
+    place-items:center
+}
+.video-frame iframe
+{
+    width:100%;
+    height:100%;
+    border:0;
+    position:absolute;
+    inset:0
+}
+.video-placeholder
+{
+    padding:22px;
+    text-align:center;
+    max-width:330px
+}
+.video-placeholder .play-symbol
+{
+    display:grid;
+    place-items:center;
+    width:58px;
+    height:58px;
+    margin:0 auto 12px;
+    border:1px solid #d6b77a;
+    border-radius:50%;
+    color:#f0d9a3;
+    font-size:1.3rem
+}
+.video-placeholder p
+{
+    font-size:.83rem;
+    color:#c4c6d1;
+    margin:0
+}
+.video-card-body
+{
+    padding:20px
+}
+.video-card-body .video-number
+{
+    font-size:.7rem;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:#d6b77a
+}
+.video-card-body h3
+{
+    font:600 1.6rem/1.1 var(--serif);
+    margin:8px 0
+}
+.video-card-body p
+{
+    font-size:.88rem;
+    color:#c4c6d1;
+    margin:0 0 15px
+}
+.video-actions
+{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap
+}
+.video-actions a
+{
+    font-size:.8rem;
+    font-weight:700;
+    color:#f0d9a3;
+    border:1px solid rgba(214,183,122,.4);
+    border-radius:999px;
+    padding:8px 13px
+}
+.video-actions a:hover
+{
+    background:rgba(214,183,122,.12)
+}
+.video-note
+{
+    font-size:.78rem;
+    color:#aeb1c0;
+    margin-top:24px
+}
+.video-note code
+{
+    color:#f0d9a3
+}
+@media(max-width:700px)
+{
+    .video-grid
+    {
+        grid-template-columns:1fr
+    }
+}
+/* TempleGate podcast studio */
+.podcast-section
+{
+    background:#f8f4ec;
+    color:#171a27
+}
+.podcast-hero
+{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:40px;
+    align-items:center;
+    padding:34px;
+    border-radius:26px;
+    background:radial-gradient(circle at 78% 20%,#36364b 0,#171a2a 45%,#0b0d17 100%);
+    color:#f7f0e4;
+    overflow:hidden;
+    margin-bottom:34px
+}
+.podcast-hero h3
+{
+    font:500 clamp(2.2rem,4vw,3.8rem)/1.02 var(--serif);
+    margin:10px 0 18px;
+    letter-spacing:-.03em
+}
+.podcast-hero p
+{
+    color:#d0d0d8;
+    max-width:540px
+}
+.podcast-orb
+{
+    width:min(100%,300px);
+    aspect-ratio:1;
+    border-radius:50%;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    border:1px solid #d6b77a88;
+    background:radial-gradient(circle,#d6b77a30 0 12%,transparent 13% 24%,#d6b77a24 25% 26%,transparent 27% 42%,#d6b77a20 43% 44%,transparent 45%),radial-gradient(circle at 35% 30%,#49445c,#141725 65%);
+    box-shadow:0 0 70px #d6b77a18,inset 0 0 35px #0008
+}
+.podcast-orb span
+{
+    font-size:4rem;
+    color:#f0d9a3
+}
+.podcast-tools
+{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin:26px 0
+}
+.podcast-search
+{
+    min-width:min(100%,290px);
+    padding:12px 16px;
+    border:1px solid #ddd4c5;
+    border-radius:999px;
+    background:#fff;
+    color:#222;
+    font:inherit
+}
+.podcast-filters
+{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap
+}
+.podcast-filter
+{
+    border:1px solid #d9cfbd;
+    background:transparent;
+    color:#555;
+    padding:9px 14px;
+    border-radius:999px;
+    cursor:pointer
+}
+.podcast-filter.active,.podcast-filter:hover
+{
+    background:#171a27;
+    color:#f7f0e4;
+    border-color:#171a27
+}
+.podcast-grid
+{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px
+}
+.podcast-card
+{
+    background:#fff;
+    border:1px solid #e7dfd2;
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .25s,box-shadow .25s
+}
+.podcast-card:hover
+{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow)
+}
+.podcast-art
+{
+    min-height:165px;
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    color:#f8f0e2;
+    background:radial-gradient(circle at 80% 15%,#75664c,#262536 45%,#111522 80%)
+}
+.podcast-art .episode-label
+{
+    font-size:.68rem;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:#f0d9a3
+}
+.podcast-art strong
+{
+    font:500 1.8rem/1.02 var(--serif);
+    max-width:280px
+}
+.podcast-body
+{
+    padding:19px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1
+}
+.podcast-meta
+{
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#9b7b42
+}
+.podcast-body h3
+{
+    font:600 1.45rem/1.08 var(--serif);
+    margin:0
+}
+.podcast-body p
+{
+    font-size:.86rem;
+    color:#71717e;
+    margin:0;
+    flex:1
+}
+.podcast-audio
+{
+    width:100%;
+    height:42px;
+    margin-top:5px
+}
+.podcast-audio:not([src])
+{
+    display:none
+}
+.podcast-missing
+{
+    font-size:.78rem!important;
+    color:#8b7c61!important;
+    background:#f8f3e9;
+    border-radius:9px;
+    padding:10px;
+    margin-top:4px!important
+}
+.podcast-actions
+{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:4px
+}
+.podcast-actions a
+{
+    font-size:.78rem;
+    font-weight:700;
+    color:#8b6b35;
+    border:1px solid #e3d2ae;
+    border-radius:999px;
+    padding:8px 12px
+}
+.podcast-actions a:hover
+{
+    background:#f8f1e2
+}
+.podcast-empty
+{
+    display:none;
+    padding:24px;
+    text-align:center;
+    color:#777
+}
+.podcast-subscribe
+{
+    margin-top:34px;
+    padding:26px;
+    border:1px solid #e5dac7;
+    border-radius:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    background:#fff
+}
+.podcast-subscribe h3
+{
+    font:500 1.7rem var(--serif);
+    margin:0 0 6px
+}
+.podcast-subscribe p
+{
+    margin:0;
+    color:#777987;
+    font-size:.87rem
+}
+.podcast-subscribe .btn
+{
+    white-space:nowrap
+}
+@media(max-width:900px)
+{
+    .podcast-grid
+    {
+        grid-template-columns:repeat(2,minmax(0,1fr))
+    }
+    .podcast-hero
+    {
+        gap:20px;
+        padding:26px
+    }
+    .podcast-orb
+    {
+        width:220px
+    }
+}
+@media(max-width:700px)
+{
+    .podcast-grid
+    {
+        grid-template-columns:1fr
+    }
+    .podcast-hero
+    {
+        grid-template-columns:1fr;
+        padding:25px
+    }
+    .podcast-orb
+    {
+        width:170px;
+        grid-row:1
+    }
+    .podcast-hero h3
+    {
+        font-size:2.5rem
+    }
+    .podcast-subscribe
+    {
+        align-items:flex-start;
+        flex-direction:column
+    }
+}
+
+@media(max-width:480px)
+{
+    .nav{min-height:68px;gap:10px}
+    .header-wordmark{font-size:1.15rem;letter-spacing:.065em}
+    .hamburger{width:46px;height:46px;flex-basis:46px}
+    .menu-top{gap:14px;padding-bottom:30px}
+}
+  
+/* Native, on-site media players */
+.templegate-video{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:contain;background:#05070d;position:absolute;inset:0}
+.video-frame{aspect-ratio:16/9;overflow:hidden}
+.media-local-note{display:inline-flex;align-items:center;font-size:.8rem;color:#f0d9a3;padding:8px 0}
+.podcast-audio{display:block;width:100%;max-width:100%;margin:12px 0}
+</style>
+ </head>
+ <body>
+  <header>
+   <div class="wrap nav">
+    <a class="header-wordmark" href="#home" aria-label="TempleGate home">TEMPLEGATE</a>
+    <div class="nav-right">
+     <button aria-controls="menuPanel" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="menuOpen">
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+     </button>
+    </div>
+   </div>
+  </header>
+  <div class="scrim" id="scrim">
+  </div>
+  <!-- Ambient meditation player. Browsers may require one tap before sound can begin. -->
+  <div aria-label="TempleGate meditation audio player" class="ambient-player" id="ambientPlayer" role="region">
+   <button aria-label="Play meditation sound" class="ambient-toggle" id="ambientToggle" title="Play meditation sound" type="button">
+    ▶
+   </button>
+   <div class="ambient-copy">
+    <span class="ambient-title">
+     TempleGate · Stillness
+    </span>
+    <span class="ambient-state" id="ambientState">
+     Tap to begin meditation music
+    </span>
+   </div>
+   <input aria-label="Meditation sound volume" class="ambient-volume" id="ambientVolume" max="100" min="0" type="range" value="22"/>
+  </div>
+  <aside aria-hidden="true" aria-label="Main navigation" class="menu-panel" id="menuPanel">
+   <div class="menu-top">
+    <a class="menu-wordmark" href="#home" aria-label="TempleGate home">TEMPLEGATE</a>
+    <button aria-label="Close navigation menu" class="menu-close" id="menuClose">
+     ×
+    </button>
+   </div>
+   <nav class="menu-links">
+    <a href="#home">
+     Home
+     <span>
+      ↗
+     </span>
+    </a>
+    <a href="#about">
+     About
+     <span>
+      ↗
+     </span>
+    </a>
+    <a href="#products">
+     Products
+     <span>
+      ↗
+     </span>
+    </a>
+    <a href="#teachings">
+     Video Teachings
+     <span>
+      ↗
+     </span>
+    </a>
+    <a href="#podcast">
+     Podcast
+     <span>
+      ↗
+     </span>
+    </a>
+    <a href="#membership">
+     Become a Member
+     <span>
+      ↗
+     </span>
+    </a>
+    <a href="#journal">
+     Blog
+     <span>
+      ↗
+     </span>
+    </a>
+    <a href="#contact">
+     Contact
+     <span>
+      ↗
+     </span>
+    </a>
+   </nav>
+   <div class="menu-bottom">
+    <strong>
+     Find Peace. Discover Wisdom.
+    </strong>
+    <p>
+     A welcoming space for every faith, every path, and every seeker.
+    </p>
+   </div>
+  </aside>
+  <main>
+   <section class="hero" id="home">
+    <div aria-hidden="true" class="hero-orbit">
+     <span>
+     </span>
+    </div>
+    <div class="wrap hero-content">
+     <div class="eyebrow">
+      A global spiritual interfaith movement
+     </div>
+     <h1>
+      Return to
+      <br/>
+      <span>
+       the sacred
+      </span>
+      <br/>
+      within.
+     </h1>
+     <p class="hero-lead">
+      Welcome to TempleGate. Rediscover yourself and find inner peace, true purpose, and fulfilment.
+     </p>
+     <p class="hero-copy">
+      At TempleGate, we honour the sacred connection people experience with the Divine, with existence, and with one another. Human life without the Divine can feel like a fish without water. In an age of chaos, distraction, relentless pursuit of wealth, and the worship of artificiality, TempleGate offers a path back to clarity, reflection, and what truly matters.
+     </p>
+     <div class="hero-actions">
+      <a class="btn btn-gold" href="#sanctuary">
+       Enter the sanctuary
+       <span>
+        ↗
+       </span>
+      </a>
+      <a class="btn btn-outline" href="#products">
+       Explore the collection
+       <span>
+        ↓
+       </span>
+      </a>
+      <a class="btn btn-gold" href="#membership">
+       Become a Member
+       <span>
+        ↗
+       </span>
+      </a>
+     </div>
+     <div class="hero-signature">
+      One humanity · Many paths · Shared wisdom
+     </div>
+    </div>
+   </section>
+   <section class="intro" id="about">
+    <div class="wrap intro-grid">
+     <div aria-hidden="true" class="intro-mark">
+      ✧
+     </div>
+     <div class="reveal">
+      <div class="eyebrow" style="color:#9b7b42">
+       A different kind of space
+      </div>
+      <h2>
+       Less noise.
+       <br/>
+       More meaning.
+      </h2>
+      <p>
+       TempleGate is a sanctuary for the human spirit: a place to pause, explore spiritual wisdom, practise meditation, and reconnect with the questions that make us human. We welcome people of all faiths, traditions, and personal beliefs—including those still finding their way.
+      </p>
+      <p>
+       We do not ask everyone to follow one path. We make room for thoughtful exploration, respectful learning, and the many ways people seek peace and purpose.
+      </p>
+      <div class="quote">
+       “In a world that constantly demands your attention, TempleGate offers you a moment to return to yourself.”
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section pillars">
+    <div class="wrap">
+     <div class="section-heading reveal">
+      <div class="eyebrow" style="color:#9b7b42">
+       The TempleGate way
+      </div>
+      <h2>
+       A sanctuary for every seeker.
+      </h2>
+      <p>
+       Come as you are. Take what nourishes you. Leave with a little more stillness than you brought.
+      </p>
+     </div>
+     <div class="pillar-grid">
+      <article class="pillar reveal">
+       <span class="pillar-number">
+        01 / PEACE
+       </span>
+       <h3>
+        Find stillness
+       </h3>
+       <p>
+        Guided meditation, calming soundscapes, mindful breathing, and quiet moments for a busy mind.
+       </p>
+      </article>
+      <article class="pillar reveal">
+       <span class="pillar-number">
+        02 / WISDOM
+       </span>
+       <h3>
+        Explore teachings
+       </h3>
+       <p>
+        Discover spiritual texts, meaningful stories, and insights from traditions across the world.
+       </p>
+      </article>
+      <article class="pillar reveal">
+       <span class="pillar-number">
+        03 / GUIDANCE
+       </span>
+       <h3>
+        Ask and understand
+       </h3>
+       <p>
+        Bring thoughtful questions about teachings and meditation. Explore guidance with care and respect.
+       </p>
+      </article>
+      <article class="pillar reveal">
+       <span class="pillar-number">
+        04 / CONNECTION
+       </span>
+       <h3>
+        Meet in person
+       </h3>
+       <p>
+        Find meditation instructors and verified guides, with the option to arrange an in-person session.
+       </p>
+      </article>
+      <article class="pillar reveal">
+       <span class="pillar-number">
+        05 / BELONGING
+       </span>
+       <h3>
+        Beyond boundaries
+       </h3>
+       <p>
+        Make space for interfaith understanding, shared reflection, and the dignity of different paths.
+       </p>
+      </article>
+      <article class="pillar reveal">
+       <span class="pillar-number">
+        06 / INTEGRATION
+       </span>
+       <h3>
+        Live with intention
+       </h3>
+       <p>
+        Carry the quiet of your practice into everyday choices, relationships, and acts of kindness.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section products" id="products">
+    <div class="wrap">
+     <div class="section-heading reveal">
+      <div class="eyebrow" style="color:#9b7b42">
+       The TempleGate collection
+      </div>
+      <h2>
+       Thoughtful companions
+       <br/>
+       for your inner journey.
+      </h2>
+      <p>
+       Discover TempleGate Sacred Living: meditation incense, candles, beads, reflection journals and mindful gift sets, alongside digital resources for a quieter life. The physical collection is in concept development; enquire to register your interest.
+      </p>
+     </div>
+     <div class="product-toolbar">
+      <div aria-label="Filter products" class="filters" role="group">
+       <button class="filter-btn active" data-filter="all">
+        All items
+       </button>
+       <button class="filter-btn" data-filter="physical">
+        Sacred Living
+       </button>
+       <button class="filter-btn" data-filter="meditation">
+        Meditation
+       </button>
+       <button class="filter-btn" data-filter="books">
+        Books &amp; journals
+       </button>
+       <button class="filter-btn" data-filter="digital">
+        Digital
+       </button>
+      </div>
+      <span class="product-count" id="productCount">
+       11 curated items
+      </span>
+     </div>
+     <div class="product-grid" id="productGrid">
+      <article class="product-card reveal" data-category="physical">
+       <div class="product-image">
+        <img
+    alt="Incense and aromatic essentials arranged for a peaceful ritual"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Coming soon
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Aromatic ritual
+        </span>
+        <h3>
+         TempleGate Sacred Incense
+        </h3>
+        <p>
+         Fragrant incense sticks for prayer, meditation and quiet reflection. Planned scent profiles include sandalwood, frankincense and jasmine, subject to supplier and ingredient review.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about TempleGate Sacred Incense" class="add-btn" data-product="TempleGate Sacred Incense">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="physical">
+       <div class="product-image">
+        <img
+    alt="Warm candlelight in a calm room"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Coming soon
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Ritual lighting
+        </span>
+        <h3>
+         TempleGate Meditation Candle
+        </h3>
+        <p>
+         A softly scented candle designed to mark a moment of stillness, journaling or evening reflection.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about TempleGate Meditation Candle" class="add-btn" data-product="TempleGate Meditation Candle">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="meditation">
+       <div class="product-image">
+        <img
+    alt="Natural beads and simple jewellery arranged on a surface"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Coming soon
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Mindful practice
+        </span>
+        <h3>
+         TempleGate Meditation Beads
+        </h3>
+        <p>
+         Comfortable wooden or stone-style beads to support breath counting, focus and personal reflection.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about TempleGate Meditation Beads" class="add-btn" data-product="TempleGate Meditation Beads">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="books">
+       <div class="product-image">
+        <img
+    alt="Open book in soft natural light"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         In development
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Writing &amp; reflection
+        </span>
+        <h3>
+         My Journey Within
+        </h3>
+        <p>
+         A TempleGate reflection journal with prompts for gratitude, self-inquiry, intention and personal growth.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about My Journey Within journal" class="add-btn" data-product="My Journey Within Reflection Journal">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="physical">
+       <div class="product-image">
+        <img
+    alt="Artisan soap bars arranged neatly"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Concept
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Bath &amp; mindful living
+        </span>
+        <h3>
+         TempleGate Botanical Soap
+        </h3>
+        <p>
+         A proposed gentle cleansing soap for everyday bathing and mindful self-care. Final ingredients and skin-safety testing must be confirmed before launch.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about TempleGate Botanical Soap" class="add-btn" data-product="TempleGate Botanical Soap">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="physical">
+       <div class="product-image">
+        <img
+    alt="Small aromatic bottles and wellness products"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Concept
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Aromatic companion
+        </span>
+        <h3>
+         TempleGate Aroma Blend
+        </h3>
+        <p>
+         A proposed fragrance blend for personal ambience. The final product format, ingredients and safe-use directions will be established with a qualified supplier.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about TempleGate Aroma Blend" class="add-btn" data-product="TempleGate Aroma Blend">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="physical">
+       <div class="product-image">
+        <img
+    alt="A thoughtfully arranged collection of notebooks and stationery"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Coming soon
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Curated gift set
+        </span>
+        <h3>
+         TempleGate Serenity Kit
+        </h3>
+        <p>
+         A signature gift set planned to bring together incense, a candle, meditation beads, a reflection journal and a short practice guide.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about TempleGate Serenity Kit" class="add-btn" data-product="TempleGate Serenity Kit">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="digital">
+       <div class="product-image">
+        <img
+    alt="Stars above a quiet mountain landscape"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Digital concept
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Audio collection
+        </span>
+        <h3>
+         Cosmic Stillness
+        </h3>
+        <p>
+         A planned collection of ambient soundscapes for reflection, rest and quiet focus.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about Cosmic Stillness" class="add-btn" data-product="Cosmic Stillness">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="meditation">
+       <div class="product-image">
+        <img
+    alt="Person meditating peacefully outdoors"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Digital concept
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Guided programme
+        </span>
+        <h3>
+         Seven Days of Calm
+        </h3>
+        <p>
+         A beginner-friendly meditation journey with daily audio and reflection prompts.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about Seven Days of Calm" class="add-btn" data-product="Seven Days of Calm">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="books">
+       <div class="product-image">
+        <img
+    alt="Notebook and pen ready for reflection"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1455390582262-044c?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Concept
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Guided journal
+        </span>
+        <h3>
+         The Inner Journey
+        </h3>
+        <p>
+         Prompts for gratitude, daily intention, self-inquiry and noticing what matters.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about The Inner Journey" class="add-btn" data-product="The Inner Journey">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card reveal" data-category="digital">
+       <div class="product-image">
+        <img
+    alt="Starry night sky over a mountain"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <span class="badge">
+         Digital concept
+        </span>
+       </div>
+       <div class="product-info">
+        <span class="product-type">
+         Wisdom library
+        </span>
+        <h3>
+         Reflections for the Soul
+        </h3>
+        <p>
+         A planned collection of short readings on peace, purpose, compassion and belonging.
+        </p>
+        <div class="product-bottom">
+         <span class="price">
+          Coming soon
+         </span>
+         <button aria-label="Enquire about Reflections for the Soul" class="add-btn" data-product="Reflections for the Soul">
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+     </div>
+     <p style="font-size:.78rem;color:#888b96;margin-top:20px">
+      TempleGate Sacred Living is a proposed collection. Items are not yet confirmed for sale; prices, stock, suppliers, formulations, payment and delivery will be confirmed before launch. Incense and candles must be used with suitable ventilation and never left burning unattended.
+     </p>
+    </div>
+   </section>
+   <section class="section sanctuary" id="sanctuary">
+    <div class="wrap sanctuary-grid">
+     <div class="reveal">
+      <div class="section-heading">
+       <div class="eyebrow">
+        Your moment of return
+       </div>
+       <h2>
+        Let the world wait.
+        <br/>
+        Be here, now.
+       </h2>
+       <p>
+        You do not have to solve everything in this moment. Begin with one breath, one question, one quiet minute.
+       </p>
+      </div>
+      <ul class="sanctuary-list">
+       <li>
+        Listen to a guided meditation or peaceful soundscape.
+       </li>
+       <li>
+        Explore teachings with context and respect for their origins.
+       </li>
+       <li>
+        Ask a question and discover paths for further reflection.
+       </li>
+       <li>
+        When you are ready, find a guide for an online or in-person session.
+       </li>
+      </ul>
+      <a class="btn btn-gold" href="#contact">
+       Ask about guidance
+       <span>
+        ↗
+       </span>
+      </a>
+     </div>
+     <div aria-label="A tranquil mountain beneath a vast star-filled sky" class="sanctuary-image reveal" role="img">
+      <div class="image-caption">
+       “Be still. Listen. Remember what matters.”
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section gallery">
+    <div class="wrap">
+     <div class="section-heading reveal">
+      <div class="eyebrow" style="color:#9b7b42">
+       Symbols of stillness
+      </div>
+      <h2>
+       Make room for wonder.
+      </h2>
+      <p>
+       From the light of a candle to the immensity of the cosmos, let the world remind you to pause.
+      </p>
+     </div>
+     <div class="gallery-grid reveal">
+      <div class="gallery-item">
+       <img
+    alt="Stars and mountains under the night sky"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/>
+       <span>
+        Infinite wonder
+       </span>
+      </div>
+      <div class="gallery-item">
+       <img
+    alt="A glowing candle in a dark room"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        The quiet flame
+       </span>
+      </div>
+      <div class="gallery-item">
+       <img
+    alt="Water meeting the horizon"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        Return to nature
+       </span>
+      </div>
+      <div class="gallery-item">
+       <img
+    alt="Majestic mountain peaks in mist"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+       <span>
+        A temple of silence
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section video-gallery" id="teachings">
+    <div class="wrap">
+     <div class="section-heading reveal">
+      <p class="video-note">All teaching videos and podcast episodes play inside TempleGate using native players. Upload your MP4 and MP3 files to the local media paths referenced by these players; no YouTube or external channel links are used.</p>
+      <div class="eyebrow">
+       Watch · Listen · Reflect
+      </div>
+      <h2>
+       Teachings for the inward journey.
+      </h2>
+      <p>
+       Explore guided meditation, mindful breathing, spiritual reflection and practices for finding stillness. Choose a teaching to watch and listen directly here.
+      </p>
+     </div>
+     <div class="video-grid">
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-01">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-01.jpg" aria-label="Play Guided Meditation for Beginners" class="templegate-video"><source src="media/videos/teaching-01.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 01
+        </span>
+        <h3>
+         Guided Meditation for Beginners
+        </h3>
+        <p>
+         A gentle introduction to settling the body and observing the breath.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Guided Meditation for Beginners" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-02">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-02.jpg" aria-label="Play Five-Minute Mindful Breathing" class="templegate-video"><source src="media/videos/teaching-02.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 02
+        </span>
+        <h3>
+         Five-Minute Mindful Breathing
+        </h3>
+        <p>
+         A short breathing practice for a pause in a busy day.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Five-Minute Mindful Breathing" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-03">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-03.jpg" aria-label="Play Finding Inner Peace" class="templegate-video"><source src="media/videos/teaching-03.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 03
+        </span>
+        <h3>
+         Finding Inner Peace
+        </h3>
+        <p>
+         Reflect on creating space between a feeling and your response.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Finding Inner Peace" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-04">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-04.jpg" aria-label="Play Morning Stillness Practice" class="templegate-video"><source src="media/videos/teaching-04.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 04
+        </span>
+        <h3>
+         Morning Stillness Practice
+        </h3>
+        <p>
+         Begin the day with intention, gratitude and awareness.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Morning Stillness Practice" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-05">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-05.jpg" aria-label="Play Evening Relaxation Meditation" class="templegate-video"><source src="media/videos/teaching-05.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 05
+        </span>
+        <h3>
+         Evening Relaxation Meditation
+        </h3>
+        <p>
+         A calming practice to help you transition into a quieter evening.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Evening Relaxation Meditation" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-06">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-06.jpg" aria-label="Play Self-Discovery and Purpose" class="templegate-video"><source src="media/videos/teaching-06.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 06
+        </span>
+        <h3>
+         Self-Discovery and Purpose
+        </h3>
+        <p>
+         Questions for reflecting on what matters most to you.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Self-Discovery and Purpose" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-07">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-07.jpg" aria-label="Play Gratitude Meditation" class="templegate-video"><source src="media/videos/teaching-07.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 07
+        </span>
+        <h3>
+         Gratitude Meditation
+        </h3>
+        <p>
+         Bring attention to people, moments and possibilities you appreciate.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Gratitude Meditation" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-08">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-08.jpg" aria-label="Play Compassion and Loving-Kindness" class="templegate-video"><source src="media/videos/teaching-08.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 08
+        </span>
+        <h3>
+         Compassion and Loving-Kindness
+        </h3>
+        <p>
+         A guided reflection on kindness towards yourself and others.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Compassion and Loving-Kindness" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-09">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-09.jpg" aria-label="Play Body Scan for Relaxation" class="templegate-video"><source src="media/videos/teaching-09.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 09
+        </span>
+        <h3>
+         Body Scan for Relaxation
+        </h3>
+        <p>
+         Move attention gently through the body without judgement.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Body Scan for Relaxation" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="video-card">
+       <div class="video-frame" id="video-frame-10">
+        <video controls preload="metadata" playsinline poster="assets/video-posters/teaching-10.jpg" aria-label="Play Silence, Awareness and Reflection" class="templegate-video"><source src="media/videos/teaching-10.mp4" type="video/mp4">Your browser does not support HTML5 video. Please update your browser.</video>
+       </div>
+       </div>
+       <div class="video-card-body">
+        <span class="video-number">
+         TempleGate teaching · 10
+        </span>
+        <h3>
+         Silence, Awareness and Reflection
+        </h3>
+        <p>
+         A contemplative guide to listening inward and noticing the present.
+        </p>
+        <div class="video-actions">
+         <span class="media-local-note">Plays here · MP4</span>
+         <a data-video-topic="Silence, Awareness and Reflection" href="#contact">
+          Suggest / enquire
+         </a>
+        </div>
+       </div>
+      </article>
+     </div>
+     <p class="video-note">
+      To play selected videos inside these blocks, replace each placeholder with an approved YouTube embed. Use
+      <code>
+       https://www.youtube-nocookie.com/embed/VIDEO_ID
+      </code>
+      for each frame. This keeps the gallery ready for your chosen teachings without embedding unverified videos.
+     </p>
+    </div>
+   </section>
+   <section class="section podcast-section" id="podcast">
+    <div class="wrap">
+     <div class="section-heading reveal">
+      <div class="eyebrow" style="color:#9b7b42">
+       TempleGate audio · Listen anywhere
+      </div>
+      <h2>
+       The TempleGate Podcast.
+      </h2>
+      <p>
+       Quiet conversations and thoughtful reflections on self-discovery, inner peace, purpose, compassion and our shared humanity.
+      </p>
+     </div>
+     <div class="podcast-hero reveal">
+      <div>
+       <div class="eyebrow">
+        A moment for yourself
+       </div>
+       <h3>
+        Press pause on the world.
+        <br/>
+        <em style="color:#f0d9a3;font-weight:400">
+         Come home to yourself.
+        </em>
+       </h3>
+       <p>
+        Settle in with a cup of tea, take a walk, or close your eyes. Each episode is an invitation to slow down, ask better questions and meet life with a little more awareness.
+       </p>
+       <a class="btn btn-gold" href="#podcastEpisodes">
+        Explore episodes
+        <span>
+         ↓
+        </span>
+       </a>
+      </div>
+      <div aria-hidden="true" class="podcast-orb">
+       <span>
+        ✧
+       </span>
+      </div>
+     </div>
+     <div class="podcast-tools" id="podcastEpisodes">
+      <input aria-label="Search podcast episodes" class="podcast-search" id="podcastSearch" placeholder="Search episodes or topics…" type="search"/>
+      <div aria-label="Filter podcast episodes" class="podcast-filters" role="group">
+       <button class="podcast-filter active" data-podcast-filter="all">
+        All episodes
+       </button>
+       <button class="podcast-filter" data-podcast-filter="meditation">
+        Meditation
+       </button>
+       <button class="podcast-filter" data-podcast-filter="purpose">
+        Purpose
+       </button>
+       <button class="podcast-filter" data-podcast-filter="wisdom">
+        Wisdom
+       </button>
+      </div>
+     </div>
+     <div class="podcast-grid" id="podcastGrid">
+      <article class="podcast-card" data-category="meditation">
+       <div class="podcast-art">
+        <span class="episode-label">
+         Episode 01 · Meditation
+        </span>
+        <strong>
+         Begin with one breath
+        </strong>
+       </div>
+       <div class="podcast-body">
+        <span class="podcast-meta">
+         A gentle practice · 8–12 min
+        </span>
+        <h3>
+         Begin with One Breath
+        </h3>
+        <p>
+         A welcoming introduction to mindful breathing and the simple power of arriving in the present moment.
+        </p>
+        <audio aria-label="Play Begin with One Breath episode" class="podcast-audio" controls preload="metadata"><source src="media/podcasts/episode-01.mp3" type="audio/mpeg">Your browser does not support HTML audio.</audio>
+        <p class="podcast-missing">
+         Audio file pending. Add the MP3 at the local path shown in this player to enable playback.
+        </p>
+        <div class="podcast-actions">
+         <a data-podcast-topic="Begin with One Breath" href="#contact">
+          Request episode ↗
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="podcast-card" data-category="purpose">
+       <div class="podcast-art" style="background:radial-gradient(circle at 80% 15%,#6c614c,#343044 45%,#111522 80%)">
+        <span class="episode-label">
+         Episode 02 · Self-discovery
+        </span>
+        <strong>
+         What makes a meaningful life?
+        </strong>
+       </div>
+       <div class="podcast-body">
+        <span class="podcast-meta">
+         Reflection · 10–15 min
+        </span>
+        <h3>
+         What Makes a Meaningful Life?
+        </h3>
+        <p>
+         Explore values, purpose and the difference between living by expectation and living with intention.
+        </p>
+        <audio aria-label="Play What Makes a Meaningful Life episode" class="podcast-audio" controls preload="metadata"><source src="media/podcasts/episode-02.mp3" type="audio/mpeg">Your browser does not support HTML audio.</audio>
+        <p class="podcast-missing">
+         Audio file pending. Add the MP3 at the local path shown in this player to enable playback.
+        </p>
+        <div class="podcast-actions">
+         <a data-podcast-topic="What Makes a Meaningful Life?" href="#contact">
+          Request episode ↗
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="podcast-card" data-category="wisdom">
+       <div class="podcast-art" style="background:radial-gradient(circle at 80% 15%,#78645b,#353044 45%,#111522 80%)">
+        <span class="episode-label">
+         Episode 03 · Shared humanity
+        </span>
+        <strong>
+         Many paths, one humanity
+        </strong>
+       </div>
+       <div class="podcast-body">
+        <span class="podcast-meta">
+         Open conversation · 12–18 min
+        </span>
+        <h3>
+         Many Paths, One Humanity
+        </h3>
+        <p>
+         A reflection on meeting different beliefs with curiosity, humility, kindness and respect.
+        </p>
+        <audio aria-label="Play Many Paths, One Humanity episode" class="podcast-audio" controls preload="metadata"><source src="media/podcasts/episode-03.mp3" type="audio/mpeg">Your browser does not support HTML audio.</audio>
+        <p class="podcast-missing">
+         Audio file pending. Add the MP3 at the local path shown in this player to enable playback.
+        </p>
+        <div class="podcast-actions">
+         <a data-podcast-topic="Many Paths, One Humanity" href="#contact">
+          Request episode ↗
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="podcast-card" data-category="meditation">
+       <div class="podcast-art" style="background:radial-gradient(circle at 80% 15%,#5e6a67,#333044 45%,#111522 80%)">
+        <span class="episode-label">
+         Episode 04 · Stillness
+        </span>
+        <strong>
+         Let the day become quiet
+        </strong>
+       </div>
+       <div class="podcast-body">
+        <span class="podcast-meta">
+         Evening reflection · 8–10 min
+        </span>
+        <h3>
+         Let the Day Become Quiet
+        </h3>
+        <p>
+         A short wind-down practice to notice the day without judgement and make room for rest.
+        </p>
+        <audio aria-label="Play Let the Day Become Quiet episode" class="podcast-audio" controls preload="metadata"><source src="media/podcasts/episode-04.mp3" type="audio/mpeg">Your browser does not support HTML audio.</audio>
+        <p class="podcast-missing">
+         Audio file pending. Add the MP3 at the local path shown in this player to enable playback.
+        </p>
+        <div class="podcast-actions">
+         <a data-podcast-topic="Let the Day Become Quiet" href="#contact">
+          Request episode ↗
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="podcast-card" data-category="purpose">
+       <div class="podcast-art" style="background:radial-gradient(circle at 80% 15%,#79694b,#353044 45%,#111522 80%)">
+        <span class="episode-label">
+         Episode 05 · Inner growth
+        </span>
+        <strong>
+         Listen to the life within
+        </strong>
+       </div>
+       <div class="podcast-body">
+        <span class="podcast-meta">
+         Self-reflection · 10–14 min
+        </span>
+        <h3>
+         Listen to the Life Within
+        </h3>
+        <p>
+         Questions to help you recognise what restores you, what drains you and what deserves your attention.
+        </p>
+        <audio aria-label="Play Listen to the Life Within episode" class="podcast-audio" controls preload="metadata"><source src="media/podcasts/episode-05.mp3" type="audio/mpeg">Your browser does not support HTML audio.</audio>
+        <p class="podcast-missing">
+         Audio file pending. Add the MP3 at the local path shown in this player to enable playback.
+        </p>
+        <div class="podcast-actions">
+         <a data-podcast-topic="Listen to the Life Within" href="#contact">
+          Request episode ↗
+         </a>
+        </div>
+       </div>
+      </article>
+      <article class="podcast-card" data-category="wisdom">
+       <div class="podcast-art" style="background:radial-gradient(circle at 80% 15%,#665b76,#353044 45%,#111522 80%)">
+        <span class="episode-label">
+         Episode 06 · Compassion
+        </span>
+        <strong>
+         The courage to be kind
+        </strong>
+       </div>
+       <div class="podcast-body">
+        <span class="podcast-meta">
+         Wisdom &amp; practice · 9–13 min
+        </span>
+        <h3>
+         The Courage to Be Kind
+        </h3>
+        <p>
+         Consider how compassion can begin with the way we speak to ourselves and extend into the world.
+        </p>
+        <audio aria-label="Play The Courage to Be Kind episode" class="podcast-audio" controls preload="metadata"><source src="media/podcasts/episode-06.mp3" type="audio/mpeg">Your browser does not support HTML audio.</audio>
+        <p class="podcast-missing">
+         Audio file pending. Add the MP3 at the local path shown in this player to enable playback.
+        </p>
+        <div class="podcast-actions">
+         <a data-podcast-topic="The Courage to Be Kind" href="#contact">
+          Request episode ↗
+         </a>
+        </div>
+       </div>
+      </article>
+     </div>
+     <p class="podcast-empty" id="podcastEmpty">
+      No episodes match that search. Try another topic.
+     </p>
+     <div class="podcast-subscribe">
+      <div>
+       <h3>
+        Have a question or a topic for the show?
+       </h3>
+       <p>
+        Suggest a conversation, ask about an episode or share a reflection with TempleGate.
+       </p>
+      </div>
+      <a class="btn btn-dark" href="#contact" id="podcastContactButton">
+       Contact TempleGate
+       <span>
+        ↗
+       </span>
+      </a>
+     </div>
+     <p class="video-note">
+      Podcast episode cards and search are ready. To enable audio playback, upload each finished MP3 file to your website (for example,
+      <code>
+       audio/podcast-01.mp3
+      </code>
+      ) and add that path to the matching audio element's
+      <code>
+       src
+      </code>
+      attribute.
+     </p>
+    </div>
+   </section>
+   <section class="section membership" id="membership">
+    <div class="wrap membership-grid">
+     <div>
+      <div class="eyebrow">
+       You are welcome here
+      </div>
+      <h2>
+       Become a Member
+       <br/>
+       <em>
+        of the TempleGate Family.
+       </em>
+      </h2>
+      <p>
+       TempleGate is a space for people seeking wisdom, inner peace, meaningful conversations and a deeper understanding of themselves and the world. If our vision speaks to you, send us a message and we will discuss membership with you personally.
+      </p>
+      <a class="btn btn-gold" href="#contact" id="membershipButton">
+       Become a Member
+       <span>
+        ↗
+       </span>
+      </a>
+     </div>
+     <div class="membership-note">
+      <span class="membership-star">
+       ✧
+      </span>
+      <blockquote>
+       “Every journey begins with a willingness to connect.”
+      </blockquote>
+      <p>
+       Tell us a little about yourself and why you would like to join the TempleGate Family. We will get in touch to discuss the next steps.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="section journal" id="journal">
+    <div class="wrap">
+     <div class="section-heading reveal">
+      <div class="eyebrow" style="color:#9b7b42">
+       The TempleGate journal
+      </div>
+      <h2>
+       Thoughts for the inward journey.
+      </h2>
+      <p>
+       Short reflections to return to when life feels loud, uncertain, or hurried.
+      </p>
+     </div>
+     <div class="journal-grid">
+      <article class="article reveal">
+       <img
+    alt="Quiet lake surrounded by mountains"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+       <div class="article-body">
+        <span class="date">
+         Reflection · 4 min read
+        </span>
+        <h3>
+         The practice of returning to peace
+        </h3>
+        <p>
+         Peace is not always the absence of difficulty. Sometimes it begins with the space we create before responding.
+        </p>
+        <a class="read-link" data-article="The practice of returning to peace" href="#contact">
+         Explore reflection
+         <span>
+          →
+         </span>
+        </a>
+       </div>
+      </article>
+      <article class="article reveal">
+       <img
+    alt="A field of stars in the night sky"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+       <div class="article-body">
+        <span class="date">
+         Wisdom · 5 min read
+        </span>
+        <h3>
+         Many paths, a shared humanity
+        </h3>
+        <p>
+         How curiosity and humility can help us meet different beliefs without losing our own.
+        </p>
+        <a class="read-link" data-article="Many paths, a shared humanity" href="#contact">
+         Explore reflection
+         <span>
+          →
+         </span>
+        </a>
+       </div>
+      </article>
+      <article class="article reveal">
+       <img
+    alt="Sunlight across a peaceful natural landscape"
+    loading="lazy"
+    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+       <div class="article-body">
+        <span class="date">
+         Mindfulness · 3 min read
+        </span>
+        <h3>
+         One breath is a beginning
+        </h3>
+        <p>
+         You do not need a perfect routine to begin. A single attentive breath can be a small act of return.
+        </p>
+        <a class="read-link" data-article="One breath is a beginning" href="#contact">
+         Explore reflection
+         <span>
+          →
+         </span>
+        </a>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+     <div class="reveal">
+      <div class="section-heading">
+       <div class="eyebrow">
+        A quiet connection
+       </div>
+       <h2>
+        How can we help you find your way?
+       </h2>
+       <p>
+        Ask about our resources, suggest a teaching or meditation topic, enquire about products, or express interest in personal guidance and in-person sessions.
+       </p>
+      </div>
+      <p style="color:#d6b77a;font:italic 1.45rem var(--serif)">
+       Every journey begins somewhere.
+      </p>
+     </div>
+     <form class="contact-form reveal" id="contactForm">
+      <div class="field">
+       <label for="name">
+        Your name
+       </label>
+       <input autocomplete="name" id="name" name="name" placeholder="How may we address you?" required=""/>
+      </div>
+      <div class="field">
+       <label for="email">
+        Email address
+       </label>
+       <input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+      </div>
+      <div class="field full">
+       <label for="interest">
+        What brings you to TempleGate?
+       </label>
+       <select id="interest" name="interest">
+        <option>
+         Spiritual teachings and questions
+        </option>
+        <option>
+         Meditation resources
+        </option>
+        <option>
+         Book a guide or in-person session
+        </option>
+        <option>
+         Product enquiry
+        </option>
+        <option>
+         TempleGate Family membership
+        </option>
+        <option>
+         Partnership or interfaith initiative
+        </option>
+        <option>
+         Something else
+        </option>
+       </select>
+      </div>
+      <div class="field full">
+       <label for="message">
+        Your message
+       </label>
+       <textarea id="message" name="message" placeholder="Share only what you feel comfortable sharing…"></textarea>
+      </div>
+      <button class="btn btn-gold" type="submit">
+       Prepare enquiry
+       <span>
+        ↗
+       </span>
+      </button>
+      <p class="form-note">
+       This demonstration form does not send or store information. Connect it to a secure form service or your own backend before publishing.
+      </p>
+      <p class="form-success" id="formSuccess" role="status">
+       This demo form is not connected yet. Please connect it to a secure form service before launch.
+      </p>
+     </form>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="wrap footer-row">
+    <div>
+     <div class="footer-brand">
+      TEMPLEGATE
+     </div>
+     <div class="footer-copy">
+      A sanctuary for the human spirit.
+     </div>
+    </div>
+    <div class="footer-links">
+     <a href="#about">
+      About
+     </a>
+     <a href="#products">
+      Products
+     </a>
+     <a href="#teachings">
+      Teachings
+     </a>
+     <a href="#podcast">
+      Podcast
+     </a>
+     <a href="#journal">
+      Journal
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+    </div>
+    <div class="footer-copy">
+     ©
+     <span id="year">
+     </span>
+     TempleGate. One humanity. Many paths.
+    </div>
+   </div>
+  </footer>
+  <div aria-live="polite" class="cart-status" id="cartStatus" role="status">
+  </div>
+  <button aria-label="Back to top" class="to-top" id="toTop">
+   ↑
+  </button>
+  <script>
+   (() => {
+  const openBtn = document.getElementById('menuOpen');
+  const closeBtn = document.getElementById('menuClose');
+  const panel = document.getElementById('menuPanel');
+  const scrim = document.getElementById('scrim');
+  const navLinks = panel.querySelectorAll('a[href^="#"]');
+  function openMenu(){panel.classList.add('open');scrim.classList.add('show');document.body.classList.add('menu-open');panel.setAttribute('aria-hidden','false');openBtn.setAttribute('aria-expanded','true');closeBtn.focus();}
+  function closeMenu(){panel.classList.remove('open');scrim.classList.remove('show');document.body.classList.remove('menu-open');panel.setAttribute('aria-hidden','true');openBtn.setAttribute('aria-expanded','false');}
+  openBtn.addEventListener('click',openMenu);closeBtn.addEventListener('click',closeMenu);scrim.addEventListener('click',closeMenu);
+  // Navigate explicitly after closing the fixed drawer. This avoids mobile-browser
+  // hash navigation getting lost while the page is locked for the open menu.
+  navLinks.forEach(link=>link.addEventListener('click',e=>{
+    const href=link.getAttribute('href');
+    if(!href || !href.startsWith('#')) return;
+    const target=document.getElementById(href.slice(1));
+    if(!target) return;
+    e.preventDefault();
+    closeMenu();
+    history.replaceState(null,'',href);
+    window.setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }));
+  // Keep all in-page navigation links reliable, including links outside the drawer.
+  document.querySelectorAll('a[href^="#"]:not(.menu-links a)').forEach(link=>link.addEventListener('click',e=>{
+    const href=link.getAttribute('href');
+    const target=href && document.getElementById(href.slice(1));
+    if(!target) return;
+    e.preventDefault();
+    history.replaceState(null,'',href);
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+  const count = document.getElementById('productCount');
+  filterButtons.forEach(btn=>btn.addEventListener('click',()=>{
+    filterButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+    let visible=0;cards.forEach(card=>{const show=btn.dataset.filter==='all'||card.dataset.category===btn.dataset.filter;card.style.display=show?'flex':'none';if(show)visible++;});
+    count.textContent = `${visible} ${visible===1?'curated item':'curated items'}`;
+  }));
+
+  // Podcast search, topic filters and enquiry shortcuts.
+  const podcastSearch=document.getElementById('podcastSearch');
+  const podcastCards=[...document.querySelectorAll('.podcast-card')];
+  const podcastFilters=[...document.querySelectorAll('[data-podcast-filter]')];
+  let podcastCategory='all';
+  function filterPodcast(){const q=(podcastSearch.value||'').trim().toLowerCase();let shown=0;podcastCards.forEach(card=>{const matchCategory=podcastCategory==='all'||card.dataset.category===podcastCategory;const matchText=card.textContent.toLowerCase().includes(q);card.style.display=matchCategory&&matchText?'flex':'none';if(matchCategory&&matchText)shown++;});document.getElementById('podcastEmpty').style.display=shown?'none':'block';}
+  podcastSearch.addEventListener('input',filterPodcast);
+  podcastFilters.forEach(btn=>btn.addEventListener('click',()=>{podcastFilters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');podcastCategory=btn.dataset.podcastFilter;filterPodcast();}));
+  document.querySelectorAll('[data-podcast-topic]').forEach(link=>link.addEventListener('click',()=>{document.getElementById('interest').value='Spiritual teachings and questions';document.getElementById('message').value=`Hello TempleGate, I would like to enquire about the podcast episode: ${link.dataset.podcastTopic}. Please let me know when it is available.`;}));
+  document.getElementById('podcastContactButton').addEventListener('click',()=>{document.getElementById('interest').value='Spiritual teachings and questions';document.getElementById('message').value='Hello TempleGate, I would like to suggest a podcast topic or ask a question for the show.';});
+  document.querySelectorAll('.podcast-audio').forEach(audio=>{audio.addEventListener('loadedmetadata',()=>{const note=audio.nextElementSibling;if(note&&note.classList.contains('podcast-missing'))note.style.display='none';});});
+
+  document.getElementById('membershipButton').addEventListener('click',()=>{document.getElementById('interest').value='TempleGate Family membership';document.getElementById('message').value='Hello TempleGate, I would like to become a member of the TempleGate Family. Please contact me so we can discuss membership.';});
+  const status=document.getElementById('cartStatus');let toastTimer;
+  document.querySelectorAll('.add-btn').forEach(btn=>btn.addEventListener('click',()=>{
+    const product=btn.dataset.product;
+    status.innerHTML=`<strong>${product}</strong> — enquiry selected. Complete the contact form to ask about availability.`;
+    status.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>status.classList.remove('show'),4200);
+    const interest=document.getElementById('interest');interest.value='Product enquiry';
+    document.getElementById('message').value=`I would like to enquire about: ${product}. Please share availability and purchase details.`;
+  }));
+
+  document.querySelectorAll('[data-article]').forEach(link=>link.addEventListener('click',()=>{
+    document.getElementById('interest').value='Spiritual teachings and questions';
+    document.getElementById('message').value=`I would like to learn more about the reflection: ${link.dataset.article}.`;
+  }));
+
+  document.getElementById('contactForm').addEventListener('submit',e=>{
+    e.preventDefault();document.getElementById('formSuccess').classList.add('show');
+    document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+  const topBtn=document.getElementById('toTop');
+  window.addEventListener('scroll',()=>topBtn.classList.toggle('show',window.scrollY>600),{passive:true});
+  topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+  </script>
+  <script>
+   /* A soft, generated ambient soundscape: no external audio file or music licence required. */
+(() => {
+  const player = document.getElementById('ambientPlayer');
+  const toggle = document.getElementById('ambientToggle');
+  const state = document.getElementById('ambientState');
+  const volume = document.getElementById('ambientVolume');
+  if (!player || !toggle || !state || !volume) return;
+  let ctx = null, master = null, nodes = [], playing = false;
+  function setStatus(text){ state.textContent = text; }
+  function startSound(){
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) { setStatus('Audio is not supported in this browser'); return; }
+    try {
+      if (!ctx) {
+        ctx = new AudioContextClass();
+        master = ctx.createGain();
+        master.gain.value = Number(volume.value) / 100 * 0.12;
+        master.connect(ctx.destination);
+        // Gentle, consonant tones with slow breathing-like volume movement.
+        [110, 164.81, 220, 329.63].forEach((frequency, index) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+          osc.type = index === 3 ? 'sine' : 'triangle';
+          osc.frequency.value = frequency;
+          filter.type = 'lowpass'; filter.frequency.value = 700;
+          gain.gain.value = index === 3 ? 0.08 : 0.18;
+          osc.connect(filter); filter.connect(gain); gain.connect(master);
+          osc.start(); nodes.push({osc, gain});
+          const lfo = ctx.createOscillator();
+          const lfoGain = ctx.createGain();
+          lfo.frequency.value = 0.06 + index * 0.018;
+          lfoGain.gain.value = 0.025;
+          lfo.connect(lfoGain); lfoGain.connect(gain.gain); lfo.start();
+          nodes.push({osc:lfo, gain:lfoGain});
+        });
+      }
+      ctx.resume().then(() => {
+        playing = true; player.classList.add('playing');
+        toggle.textContent = 'Ⅱ'; toggle.setAttribute('aria-label','Pause meditation sound');
+        setStatus('Playing ambient meditation sound');
+      }).catch(() => setStatus('Tap play to enable sound'));
+    } catch (err) { setStatus('Tap play to begin'); }
+  }
+  function stopSound(){
+    if (ctx && master) { master.gain.setTargetAtTime(0, ctx.currentTime, 0.12); }
+    playing = false; player.classList.remove('playing');
+    toggle.textContent = '▶'; toggle.setAttribute('aria-label','Play meditation sound');
+    setStatus('Paused · Tap to continue');
+  }
+  toggle.addEventListener('click', () => {
+    if (playing) { stopSound(); return; }
+    if (ctx && master) master.gain.setTargetAtTime(Number(volume.value)/100*0.12, ctx.currentTime, 0.2);
+    startSound();
+  });
+  volume.addEventListener('input', () => {
+    if (ctx && master) master.gain.setTargetAtTime(Number(volume.value)/100*0.12, ctx.currentTime, 0.08);
+  });
+  // Attempt on landing; mobile browsers commonly block audible autoplay until a tap.
+  window.addEventListener('load', () => {
+    startSound();
+    if (!playing) setStatus('Tap ▶ to begin meditation music');
+  }, {once:true});
+  // Pause when the visitor leaves the page; do not surprise them on return.
+  document.addEventListener('visibilitychange', () => { if (document.hidden && playing) stopSound(); });
+})();
+  </script>
+ </body>
+</html>
